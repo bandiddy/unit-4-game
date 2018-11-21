@@ -46,7 +46,7 @@ function winner() {
 }
 //if user loses
 function loser() {
-    losses++;
+    loss++;
     $('#numberLosses').text(loss);
     reset()
 }
@@ -56,12 +56,51 @@ $('#blue').on('click', function() {
     userTotal = userTotal + num1;
     //console.log("Number" + userTotal);
     $('#total').text(userTotal);
+        if (userTotal === Random) {
+            winner();
+        }
+        else if (userTotal > Random) {
+            loser();
+        }
+})
+
+$('#green').on('click', function() {
+    userTotal = userTotal + num2;
+    //console.log("Number" + userTotal);
+    $('#total').text(userTotal);
+
+        if (userTotal === Random) {
+            winner();
+        }
+        else if (userTotal > Random) {
+            loser();
+        }
+})
+
+$('#white').on('click', function() {
+    userTotal = userTotal + num3;
+    //console.log("Number" + userTotal);
+    $('#total').text(userTotal);
 
         if (userTotal == Random) {
             winner();
         }
-        else if (userTotal > Radom) {
+        else if (userTotal > Random) {
             loser();
         }
 })
+
+$('#clear').on('click', function() {
+    userTotal = userTotal + num4;
+    //console.log("Number" + userTotal);
+    $('#total').text(userTotal);
+
+        if (userTotal == Random) {
+            winner();
+        }
+        else if (userTotal > Random) {
+            loser();
+        }
+})
+
 })
